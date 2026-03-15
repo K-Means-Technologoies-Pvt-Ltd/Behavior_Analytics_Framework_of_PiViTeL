@@ -11,7 +11,7 @@ def load_dataset(path):
         return df
     except Exception as e:
         print("Error loading dataset:", e)
-
+        return None
 
 def inspect_dataset(df):
     """Inspect dataset structure"""
@@ -46,6 +46,9 @@ def basic_statistics(df):
 def main():
 
     df = load_dataset(DATA_PATH)
+    if df is None:
+        print("Failed to load dataset. Aborting analysis.")
+        return
 
     inspect_dataset(df)
 
