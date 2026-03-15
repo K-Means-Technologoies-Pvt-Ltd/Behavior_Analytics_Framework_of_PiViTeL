@@ -1,20 +1,5 @@
 # Dataset Validation Report
 
-## Project
-**An Explainable Driving Behavior Analytics Framework for Government-Aligned Pay-As-You-Drive Models Using PiViTeL Edge Telemetry**
-
-## Objective
-The objective of this validation step is to inspect and verify the structure of the merged telemetry dataset to ensure it is suitable for further data analytics and visualization tasks.
-
-The validation process includes:
-- Identifying dataset attributes
-- Verifying column data types
-- Inspecting dataset size and dimensions
-- Evaluating missing values
-- Confirming dataset consistency for analytical processing
-
----
-
 # 1. Dataset Overview
 
 Dataset File:
@@ -189,19 +174,8 @@ Temperature readings range between approximately **18°C and 45°C**, which is c
 
 ---
 
-# 6. Dataset Consistency Assessment
 
-Based on the validation process, the dataset demonstrates the following characteristics:
-
-✔ Dataset structure is consistent across merged CSV files  
-✔ Column types align with expected telemetry data formats  
-✔ Sensor data from IMU and GPS modules appears valid  
-✔ Object detection attributes are present where applicable  
-✔ Minor missing values exist primarily in detection and GPS fields  
-
----
-
-# 7. Conclusion
+# 6. Conclusion
 
 The merged telemetry dataset has been successfully inspected and validated. The dataset structure, attributes, and data types have been verified to ensure compatibility with further analytical processing.
 
