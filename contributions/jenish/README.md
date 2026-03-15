@@ -17,3 +17,13 @@ data/raw/
 
 Outcome:
 Dataset prepared for further preprocessing and analytics.
+
+
+## Task 3: Dataset Structure Inspection
+
+Inspected the merged telemetry dataset to verify dataset structure,
+column types, dataset dimensions, and missing values.
+
+Output:
+analytics/dataset_validation.py
+docs/dataset_validation_report.md
