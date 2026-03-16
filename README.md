@@ -50,5 +50,6 @@ The project transforms raw telemetry data into meaningful driving behavior indic
 
 ## Contributors
 
-- Jenish A. Borah – Data Analytics, Feature Engineering, Driving Score Model
-- Shruti Sarma – Data Cleaning, EDA, Visualization and Spatial Analysis
+- CSD25007_Shruti Sarma 
+- CSD25017_Jenish A. Borah 
+
