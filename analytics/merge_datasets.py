@@ -2,12 +2,16 @@ import pandas as pd
 import os
 
 # Relative paths from project root
-RAW_FOLDER = "data/raw"
-OUTPUT_FILE = "data/processed/pivitel_merged_dataset.csv"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+RAW_FOLDER = os.path.join(BASE_DIR, "data", "raw")
+PROCESSED_FOLDER = os.path.join(BASE_DIR, "data", "processed")
 
 VIDEO_FILE = os.path.join(RAW_FOLDER, r"C:\Users\Lenovo\OneDrive\Desktop\Behavior_Analytics_Framework_of_PiViTeL\data\raw\driving_video.csv")
 SENSOR_FILE = os.path.join(RAW_FOLDER, r"C:\Users\Lenovo\OneDrive\Desktop\Behavior_Analytics_Framework_of_PiViTeL\data\raw\sesor_data.csv")
 
+OUTPUT_FILE = os.path.join(PROCESSED_FOLDER, "pivitel_merged_dataset.csv")
 
 def standardize_columns(df):
     df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")

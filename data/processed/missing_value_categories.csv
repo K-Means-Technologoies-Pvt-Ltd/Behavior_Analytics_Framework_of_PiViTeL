@@ -1,0 +1,5 @@
+Category,Columns
+Completely Missing,"['overlay_time', 'overlay_date', 'overlay_gps', 'overlay_accel_g', 'overlay_gyro_deg_s']"
+High Missing,"['detection_id', 'tracking_id', 'class', 'confidence', 'bbox_x', 'bbox_y', 'bbox_w', 'bbox_h', 'position', 'distance_m']"
+Moderate Missing,"['gps_speed_kmh', 'gps_course_degrees']"
+Low Missing,"['latitude', 'longitude', 'gps_altitude', 'gps_hdop', 'gps_data_age_seconds']"
