@@ -27,3 +27,89 @@ column types, dataset dimensions, and missing values.
 Output:
 analytics/dataset_validation.py
 docs/dataset_validation_report.md
+
+
+
+
+## Task 4.2: Missing Value Treatment and Dataset Cleaning
+
+### Objective
+The objective of this task was to clean the PiViTeL telemetry dataset by handling missing values identified during the Missing Value Investigation phase. The goal was to ensure that the dataset maintains temporal continuity of the vehicle trip while preparing it for exploratory data analysis and driving behavior analytics.
+
+### Dataset
+Input dataset:
+data/processed/pivitel_merged_dataset.csv
+
+Dataset size before cleaning:
+- Rows: 4398
+- Columns: 47
+
+### Work Performed
+
+The following steps were implemented to treat missing values and prepare the dataset for analysis.
+
+### 1. Removal of Completely Missing Columns
+Several overlay metadata columns contained no usable information across the dataset. These columns were removed to simplify the dataset.
+
+Removed columns:
+- overlay_time
+- overlay_date
+- overlay_gps
+- overlay_accel_g
+- overlay_gyro_deg_s
+
+### 2. Handling Object Detection Missing Values
+Missing values in object detection attributes occur when the computer vision model does not detect any object in a frame. These missing values were replaced with logical defaults to preserve the frame sequence.
+
+Applied replacements:
+- class → "no_object"
+- confidence → 0
+- bbox_x, bbox_y, bbox_w, bbox_h → 0
+- position → "unknown"
+- distance_m → -1
+- detection_id → -1
+- tracking_id → -1
+
+This approach ensures that frames without object detections are still represented in the dataset.
+
+### 3. Handling GPS Missing Values
+Small gaps in GPS telemetry were observed due to temporary signal interruptions. These values were estimated using interpolation followed by forward and backward filling to maintain spatial continuity.
+
+Affected attributes:
+- latitude
+- longitude
+- gps_altitude
+
+### 4. Handling GPS Precision Attributes
+Missing values in GPS quality indicators were handled using interpolation and forward filling.
+
+Affected attributes:
+- gps_hdop
+- gps_data_age_seconds
+
+### 5. Handling Speed and Direction Measurements
+Missing values in vehicle speed and heading direction were filled using forward and backward propagation since speed measurements change gradually between frames.
+
+Affected attributes:
+- gps_speed_kmh
+- gps_course_degrees
+
+### 6. Timestamp Conversion and Timeline Reconstruction
+Timestamp attributes were converted to datetime format to reconstruct the chronological order of the vehicle trip. The dataset was then sorted based on timestamp values.
+
+### 7. Sensor Time Gap Analysis
+A time_gap column was created to measure the time difference between consecutive frames. This allows detection of potential sensor delays or data collection interruptions.
+
+### Outcome
+
+The dataset was successfully cleaned and validated after applying the missing value treatment strategies. All remaining attributes contain valid values and the chronological order of the vehicle trip has been preserved.
+
+Final dataset generated:
+
+data/processed/pivitel_cleaned_dataset.csv
+
+This cleaned dataset will be used in the next phase of the project for exploratory data analysis and driving behavior analytics.
+
+### Next Phase
+
+The next stage involves performing exploratory data analysis to understand driving patterns, object detection behavior, and vehicle telemetry characteristics.
