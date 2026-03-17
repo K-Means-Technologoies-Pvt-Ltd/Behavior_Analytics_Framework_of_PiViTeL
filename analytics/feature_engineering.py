@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 DATA_PATH = "data/processed/pivitel_cleaned_dataset.csv"
 
