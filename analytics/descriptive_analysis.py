@@ -121,7 +121,7 @@ print("\nDescriptive statistics saved successfully.")
 # SAVE OUTPUT TO TEXT FILE
 # ---------------------------------------------------
 
-with open("outputs/descriptive_analysis.txt", "w") as f:
+with open("outputs/analytics/descriptive_analysis.txt", "w") as f:
     
     f.write("CENTRAL TENDENCY\n")
     f.write(f"Average Speed: {df['gps_speed_kmh'].mean()}\n")
