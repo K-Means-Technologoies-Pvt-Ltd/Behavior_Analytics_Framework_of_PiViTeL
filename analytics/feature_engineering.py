@@ -49,7 +49,7 @@ df['acceleration_change'] = df['acceleration_change'].fillna(0)
 # Overspeed Detection
 # ---------------------------------------------------
 
-SPEED_LIMIT = 60
+SPEED_LIMIT = 50
 df['overspeed'] = df['gps_speed_kmh'] > SPEED_LIMIT
 
 
@@ -57,8 +57,8 @@ df['overspeed'] = df['gps_speed_kmh'] > SPEED_LIMIT
 # Sudden Acceleration & Braking
 # ---------------------------------------------------
 
-ACC_THRESHOLD = 10     # realistic threshold for km/h diff
-BRAKE_THRESHOLD = -10
+ACC_THRESHOLD = 8.5     
+BRAKE_THRESHOLD = -8.5
 
 df['sudden_acceleration'] = df['speed_diff'] > ACC_THRESHOLD
 df['sudden_braking'] = df['speed_diff'] < BRAKE_THRESHOLD
