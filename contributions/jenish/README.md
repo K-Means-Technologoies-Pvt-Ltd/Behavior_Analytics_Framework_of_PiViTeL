@@ -113,3 +113,68 @@ This cleaned dataset will be used in the next phase of the project for explorato
 ### Next Phase
 
 The next stage involves performing exploratory data analysis to understand driving patterns, object detection behavior, and vehicle telemetry characteristics.
+=========================
+
+## Task 5: Descriptive Analysis of Feature Dataset
+
+### Objective
+The objective of this task was to perform descriptive analytics on the feature-engineered PiViTeL dataset to understand the overall characteristics of driving behaviour. This includes summarizing numerical features and quantifying risk-related events.
+
+### Dataset
+Input dataset:
+data/processed/pivitel_feature_dataset.csv
+
+The dataset contains both raw telemetry data and derived behavioural features such as overspeed, sudden braking, and proximity risk indicators.
+
+### Work Performed
+
+The following analytical steps were carried out:
+
+### 1. Statistical Summary
+Basic descriptive statistics were computed using standard measures such as mean, median, standard deviation, minimum, and maximum values for numerical variables including speed, acceleration, and distance.
+
+### 2. Central Tendency Analysis
+Average and median values were calculated to understand typical driving conditions. This helped identify general driving speed and normal operating behaviour.
+
+### 3. Variability Analysis
+Standard deviation was used to evaluate the consistency of driving behaviour. Lower variability indicates stable driving, while higher variability suggests inconsistent driving patterns.
+
+### 4. Extreme Value Analysis
+Maximum and minimum values were analyzed to detect possible outliers or abnormal driving conditions such as high speed or unusual acceleration.
+
+### 5. Driving Event Analysis
+Counts of key behavioural events were calculated, including:
+- Overspeed events
+- Sudden acceleration
+- Sudden braking
+- Close object proximity
+
+### 6. Event Percentage Analysis
+The percentage of each event type was computed relative to the total number of observations. This provides a normalized measure of driving risk.
+
+### Key Findings
+
+- The average vehicle speed indicates moderate and controlled driving behaviour  
+- No overspeed events were observed, indicating compliance with speed limits  
+- Sudden acceleration and braking events are minimal, suggesting smooth driving  
+- Close object risk events are relatively high, indicating frequent proximity to objects and potential safety concerns  
+- Acceleration values remain within a narrow range due to the inclusion of gravitational force in IMU measurements  
+
+### Output Generated
+
+All results were stored in a structured format under:
+
+outputs/analytics/descriptive/
+
+Generated files:
+- descriptive_analysis.txt
+- descriptive_analysis.md
+- descriptive_statistics.csv
+
+### Importance
+
+This stage establishes a statistical baseline for the dataset and provides initial insights into driving behaviour. These findings support further analysis in the EDA phase and help in identifying key risk indicators.
+
+### Next Phase
+
+The next stage involves univariate analysis and visualization to study the distribution of individual features and better understand driving patterns.
