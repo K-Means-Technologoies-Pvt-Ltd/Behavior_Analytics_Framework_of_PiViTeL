@@ -178,3 +178,66 @@ This stage establishes a statistical baseline for the dataset and provides initi
 ### Next Phase
 
 The next stage involves univariate analysis and visualization to study the distribution of individual features and better understand driving patterns.
+===========
+
+
+
+## Task 7: Bivariate Analysis of Driving Behaviour Dataset
+
+### Objective
+The objective of this task was to analyze relationships between variables to understand how different driving factors interact and contribute to risk.
+
+### Dataset
+Input dataset:
+data/processed/pivitel_feature_dataset.csv
+
+### Work Performed
+
+The following bivariate analysis techniques were implemented:
+
+### 1. Core Relationship Analysis
+- Speed vs Distance (collision risk analysis)
+- Speed vs Acceleration (driving behaviour analysis)
+
+### 2. Risk-Based Analysis
+- Speed vs Close Object Risk
+- Speed vs Sudden Braking
+- Speed vs Sudden Acceleration
+- Distance vs Sudden Braking
+
+### 3. Behaviour Interaction Analysis
+- Acceleration vs Close Object Risk
+- Speed vs Object Class
+
+### 4. Temporal Relationship Analysis
+- Speed vs Hour of Day
+- Close Object Risk vs Hour
+
+### 5. Advanced Analysis
+- Risk probability vs speed (binned analysis)
+- Density plot (speed vs distance)
+- Event correlation heatmap
+- Pairplot for multiple variable relationships
+
+### Key Observations
+
+- Close object risk frequently occurs at moderate speeds, indicating unsafe proximity conditions
+- Sudden braking events are associated with lower object distances, suggesting reactive driving
+- Risk probability increases with speed, highlighting increased danger at higher speeds
+- Event correlation indicates that braking and proximity risks often occur together
+- Temporal analysis shows variation in risk based on driving time
+
+### Output Generated
+
+All outputs were stored under:
+
+outputs/analytics/bivariate/
+
+Generated visualizations include:
+- Scatter plots, boxplots, density plots
+- Heatmaps and correlation matrices
+- Advanced probability-based graphs
+
+### Importance
+
+This stage provides deeper insights into driving behaviour by identifying relationships between variables. It forms the basis for risk modeling, feature importance, and explainable driving score computation.
