@@ -205,3 +205,73 @@ The feature dataset transforms raw sensor data into interpretable behavioural in
 
 The next stage involves performing exploratory data analysis (EDA) using the feature dataset to visualize driving patterns and identify key behavioural trends.
 =============
+
+## Task 6: Univariate Analysis of Driving Behaviour Dataset
+
+### Objective
+The objective of this task was to analyze individual variables independently to understand their distribution, patterns, and potential risk indicators in driving behaviour.
+
+### Dataset
+Input dataset:
+data/processed/pivitel_feature_dataset.csv
+
+### Work Performed
+
+The following univariate analysis steps were performed:
+
+### 1. Numerical Variable Analysis
+- Generated histograms for:
+  - Vehicle speed (gps_speed_kmh)
+  - Acceleration (imu_accel_magnitude)
+  - Object distance (distance_m)
+  - Detection confidence
+  - Trip distance
+- Created boxplots for speed to identify outliers
+
+### 2. Categorical and Event Analysis
+- Generated bar charts for:
+  - Overspeed events
+  - Sudden braking events
+  - Sudden acceleration events
+  - High acceleration events
+  - Close object risk
+  - Night driving
+
+### 3. Object Detection Analysis
+- Created distribution plots for object classes
+- Generated pie chart for most frequent object categories
+
+### 4. Temporal Analysis
+- Visualized driving distribution by hour of day
+- Analyzed night vs day driving patterns
+
+### 5. Spatial and Direction Analysis
+- Created GPS route visualization using latitude and longitude
+- Generated circular (rose) plot for GPS course direction
+
+### 6. Risk Distribution
+- Generated pie chart to show proportion of risk events
+
+### Key Observations
+
+- Vehicle speed is mostly concentrated in a moderate range, indicating controlled driving
+- Overspeed events are absent, suggesting compliance with speed limits
+- Sudden braking and acceleration events are minimal, indicating smooth driving behaviour
+- Close object risk occurs frequently, highlighting potential safety concerns
+- Driving activity is concentrated during specific hours, with minimal night driving
+
+### Output Generated
+
+All outputs were stored under:
+
+outputs/analytics/univariate/
+
+Generated visualizations include:
+- Histograms, boxplots, bar charts, pie charts
+- GPS route visualization
+- Directional analysis plots
+
+### Importance
+
+This stage provides a clear understanding of individual feature distributions and establishes the foundation for relationship analysis in subsequent stages.
+==============
