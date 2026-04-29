@@ -1,0 +1,15 @@
+,high_risk_event
+high_risk_event,1.0
+close_object_risk,0.9625989698297301
+overspeed,0.2452765838590211
+gps_speed_kmh,0.19386079888086202
+sudden_braking,0.04359958747117
+sudden_acceleration,0.0355948648577088
+acceleration_change,0.00032820603336750255
+high_acceleration,-0.009898715495885673
+speed_diff,-0.010317199111543808
+imu_accel_magnitude,-0.02144985270105752
+trip_distance,-0.32865015538672976
+distance_m,-0.6688173762758343
+hour_of_day,
+night_driving,
