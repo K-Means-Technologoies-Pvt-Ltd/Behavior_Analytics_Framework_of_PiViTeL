@@ -1,14 +1,22 @@
 ,,0
 video_time_seconds,frame_number,0.9999981097958264
 frame_number,video_time_seconds,0.9999981097958264
+<<<<<<< HEAD
 video_time_seconds,latitude,0.9879056750584562
 latitude,video_time_seconds,0.9879056750584562
 frame_number,latitude,0.987847060320943
 latitude,frame_number,0.987847060320943
+=======
+latitude,video_time_seconds,0.9879056750584562
+video_time_seconds,latitude,0.9879056750584562
+latitude,frame_number,0.987847060320943
+frame_number,latitude,0.987847060320943
+>>>>>>> 33cd4ef091124d0bd78689e76fa9e51dae920ef4
 imu_accel_magnitude,imu_accel_z,0.9682386818841898
 imu_accel_z,imu_accel_magnitude,0.9682386818841898
 longitude,latitude,0.9543909681154057
 latitude,longitude,0.9543909681154057
+<<<<<<< HEAD
 longitude,video_time_seconds,0.9535121459540736
 video_time_seconds,longitude,0.9535121459540736
 longitude,frame_number,0.9533664859178814
@@ -19,3 +27,15 @@ bbox_y,confidence,0.8214127738347785
 confidence,bbox_y,0.8214127738347785
 imu_mag_magnitude,imu_mag_z,0.79767400672783
 imu_mag_z,imu_mag_magnitude,0.79767400672783
+=======
+video_time_seconds,longitude,0.9535121459540736
+longitude,video_time_seconds,0.9535121459540736
+frame_number,longitude,0.9533664859178814
+longitude,frame_number,0.9533664859178814
+close_object_risk,confidence,0.9479363664091972
+confidence,close_object_risk,0.9479363664091972
+object_detected,confidence,0.9479363664091965
+confidence,object_detected,0.9479363664091965
+risk_score,close_object_risk,0.8931140089099886
+close_object_risk,risk_score,0.8931140089099886
+>>>>>>> 33cd4ef091124d0bd78689e76fa9e51dae920ef4
