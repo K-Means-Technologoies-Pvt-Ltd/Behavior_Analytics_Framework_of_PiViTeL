@@ -1,3 +1,5 @@
+const base = "/Behavior_Analytics_Framework_of_PiViTeL";
+
 import React from 'react';
 import FlipCard from './FlipCard';
 import './GraphGrid.css';
