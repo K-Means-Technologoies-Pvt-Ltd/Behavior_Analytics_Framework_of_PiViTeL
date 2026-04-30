@@ -241,3 +241,121 @@ Generated visualizations include:
 ### Importance
 
 This stage provides deeper insights into driving behaviour by identifying relationships between variables. It forms the basis for risk modeling, feature importance, and explainable driving score computation.
+
+
+
+
+
+
+
+
+# TASK 9: Feature Selection
+
+## Objective
+
+The objective of this task was to identify the most relevant features from the PiViTeL telemetry dataset that significantly influence driving risk. Feature selection helps in improving model performance, reducing redundancy, and enhancing interpretability.
+
+---
+
+## Dataset Used
+
+- Input: `data/processed/pivitel_feature_dataset.csv`
+- Output:
+  - `target_correlation.csv`
+  - `final_features.csv`
+  - `pivitel_model_dataset.csv`
+
+---
+
+## Key Steps Performed
+
+### 1. Data Preparation
+
+- Loaded the feature-engineered dataset.
+- Converted boolean values (`True/False`) into numeric format (`1/0`).
+- Selected only numerical columns for analysis to ensure proper correlation computation.
+
+---
+
+### 2. Target Variable Creation
+
+A unified target variable `high_risk_event` was created based on multiple driving risk indicators:
+
+- Overspeed
+- Sudden Braking
+- Sudden Acceleration
+- Close Object Risk
+
+A weighted risk score was computed and converted into a binary classification label:
+
+- `1` → High risk
+- `0` → Low risk
+
+---
+
+### 3. Correlation-Based Feature Importance
+
+- Computed correlation of all features with the target variable (`high_risk_event`).
+- Features with higher correlation values were considered more relevant.
+- A threshold-based filtering approach was applied to select important features.
+
+---
+
+### 4. Removal of Redundant Features (Multicollinearity Handling)
+
+- Checked inter-feature correlation.
+- Features highly correlated with each other (above a defined threshold) were removed.
+- This step ensures:
+  - Reduced redundancy
+  - Better model stability
+  - Improved interpretability
+
+---
+
+### 5. Final Feature Selection
+
+- Selected a refined set of features that:
+  - Have meaningful correlation with the target
+  - Are not redundant
+- These features represent the most informative variables for driving behavior analysis.
+
+---
+
+### 6. Model Dataset Preparation
+
+- Created a final dataset consisting of:
+  - Selected features
+  - Target variable (`high_risk_event`)
+- Saved as:
+  - `pivitel_model_dataset.csv`
+
+---
+
+## Key Observations
+
+- Speed-related features play a significant role in driving risk.
+- Distance-related features show strong inverse relationships with risk.
+- Some derived features were redundant and removed during selection.
+- Feature selection improved dataset quality for model training.
+
+---
+
+## Outcome
+
+- Identified the most important features influencing driving risk.
+- Reduced dataset dimensionality.
+- Prepared a clean and optimized dataset for machine learning models.
+
+---
+
+## Conclusion
+
+Feature selection played a critical role in refining the dataset by removing unnecessary and redundant variables. This step ensures that the model focuses only on meaningful inputs, leading to better performance and interpretability.
+
+---
+
+## Next Step
+
+➡ Model Building using selected features  
+➡ Performance evaluation of multiple models  
+➡ Explainability using SHAP/LIME

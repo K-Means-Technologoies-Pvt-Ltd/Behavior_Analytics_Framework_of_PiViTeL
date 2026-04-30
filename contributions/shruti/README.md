@@ -275,3 +275,116 @@ Generated visualizations include:
 
 This stage provides a clear understanding of individual feature distributions and establishes the foundation for relationship analysis in subsequent stages.
 ==============
+
+
+
+
+
+# Task 8: Correlation Analysis 
+
+## Objective
+
+The objective of this task was to analyze the relationships between different variables in the PiViTeL telemetry dataset and identify which features significantly influence driving risk. This step helps in understanding dependencies among variables and supports feature selection for model building.
+
+---
+
+## Dataset Used
+
+- Input: `data/processed/pivitel_feature_dataset.csv`
+- Output:
+  - `correlation_matrix.csv`
+  - `correlation_heatmap.png`
+  - `target_correlation.csv`
+  - `top_correlations.csv`
+
+---
+
+## Key Steps Performed
+
+### 1. Data Preparation
+
+- Loaded the feature-engineered dataset.
+- Converted boolean values (`True/False`) into numeric format (`1/0`) to ensure compatibility with correlation calculations.
+- Handled missing values by removing empty columns and filling remaining null values.
+
+---
+
+### 2. Target Variable Creation
+
+A unified target variable was created to represent overall driving risk:
+
+- A **risk score** was calculated using weighted combinations of:
+  - Overspeed
+  - Sudden Braking
+  - Sudden Acceleration
+  - Close Object Risk
+
+- Based on this score, a binary variable `high_risk_event` was generated:
+  - `1` → High risk
+  - `0` → Low risk
+
+---
+
+### 3. Correlation Matrix Computation
+
+- Pearson correlation was computed for all numerical features.
+- This helped identify:
+  - Strong positive relationships
+  - Negative dependencies
+  - Independent features
+
+---
+
+### 4. Heatmap Visualization
+
+- A correlation heatmap was generated to visually represent relationships between variables.
+- This provides an intuitive understanding of how different features interact.
+
+---
+
+### 5. Correlation with Target Variable
+
+- Correlation of each feature with `high_risk_event` was computed.
+- This step is crucial to determine:
+  - Which features influence driving risk
+  - Which features should be selected for modeling
+
+---
+
+### 6. Identification of Strong Feature Relationships
+
+- Top correlated feature pairs were extracted.
+- Helps in:
+  - Detecting multicollinearity
+  - Avoiding redundant features
+
+---
+
+## Key Observations
+
+- Speed-related features show moderate correlation with risk.
+- Distance-based features show inverse relationship with risk.
+- Close object risk is strongly associated with high-risk events.
+- Some features show high inter-correlation and may need removal in feature selection.
+
+---
+
+## Outcome
+
+- Successfully identified important features influencing driving behavior.
+- Generated correlation insights to guide feature selection.
+- Prepared the dataset for the next stage: **Feature Selection and Model Building**.
+
+---
+
+## Conclusion
+
+Correlation analysis provided a deeper understanding of how different telemetry variables interact with each other and contribute to driving risk. This step forms a critical bridge between exploratory analysis and predictive modeling.
+
+---
+
+## Next Step
+
+➡ Feature Selection based on correlation results  
+➡ Model Building for risk prediction  
+➡ Explainability using SHAP/LIME
