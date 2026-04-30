@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite frontend",
-    "build": "vite build frontend",
-    "lint": "eslint .",
-    "preview": "vite preview frontend"
-  },
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
   "dependencies": {
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.14.0",
